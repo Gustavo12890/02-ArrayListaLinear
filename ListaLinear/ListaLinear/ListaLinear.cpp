@@ -27,7 +27,7 @@ void menu()
 {
 	int op = 0;
 	while (op != 6) {
-		system("cls"); // somente no windows
+		// system("cls"); // somente no windows
 		cout << "Menu Lista Linear";
 		cout << endl << endl;
 		cout << "1 - Inicializar Lista \n";
@@ -58,7 +58,8 @@ void menu()
 			break;
 		}
 
-		system("pause"); // somente no windows
+		cin.get();
+		// system("pause"); // somente no windows
 	}
 }
 
@@ -103,7 +104,27 @@ void inserirElemento()
 }
 
 // deve ser implementada como resposta ao exercicio
-void buscarElemento()
+void buscarElemento() //declara a função.
 {
+	int numero = 0;
+	bool encontrado = false; //indica se o número foi encontrado.
 
+	cout << "Digite um número a buscar: ";
+	cin >> numero; //lendo variável
+
+	for (int n = 0; n < nElementos; n++) {
+		if(lista[n] == numero){
+			encontrado = true;
+			cout << "número encontrado na posição: " << n+1 << endl;
+		}
+	}
+
+	if(!encontrado){
+		cout << "Número não encontrado.";
+	}
+
+	cin.ignore();
+	cin.get();
+
+	system("clear");
 }
